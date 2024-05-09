@@ -39,7 +39,11 @@ routes.get("/usuarios", async (req, res) => {
     )}
 </ol>
 `;
-    console.log(chalk.blue.bgWhite(template));
+
+    const consola =`Mujeres: ${mujeres.map((item) => ` / Nombre: ${item.name} - Apellido: ${item.lastName} - Genero: ${item.gender} - ID: ${item.id} - Timestamp: ${item.timestamp}`)}
+    
+Hombres: ${hombres.map((item) => ` / Nombre: ${item.name} - Apellido: ${item.lastName} - Genero: ${item.gender} - ID: ${item.id} - Timestamp: ${item.timestamp}`)}`
+    console.log(chalk.blue.bgWhite(consola));
 
     res.send(template);
   } catch (error) {
